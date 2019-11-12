@@ -46,4 +46,4 @@ To install a debug version select Release or Debug build, otherwise select Maste
 ## Acknowledgements
 Thanks to the [Gemstone Staff, and Dr. Kristen Skendall](http://gemstone.umd.edu/), our mentor [Dr. Mathias Zwicker](https://www.cs.umd.edu/~zwicker/), Yu Lu, Matthew Chung, all of the experts that lent us their invaluable insight, The XR club, all of our launch donors, and all of our study participants.
 ## Contact
-Contact team members about this project at teamartgemstone AT gmail or on our [facebook page]([https://www.facebook.com/UMDGemstoneTeamART/](https://www.facebook.com/UMDGemstoneTeamART/))
+Contact team members about this project at teamartgemstone AT gmail or on our [facebook page]([https://www.facebook.com/UMDGemstoneTeamART/](https://www.facebook.com/UMDGemstoneTeamART/)
