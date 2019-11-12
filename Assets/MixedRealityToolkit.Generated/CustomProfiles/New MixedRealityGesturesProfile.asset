@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7554812f08ec49e694a8d9d4ee235a9c, type: 3}
+  m_Name: New MixedRealityGesturesProfile
+  m_EditorClassIdentifier: 
+  isCustomProfile: 1
+  manipulationGestures: 1
+  navigationGestures: 113
+  useRailsNavigation: 0
+  railsNavigationGestures: 897
+  windowsGestureAutoStart: 0
+  gestures:
+  - description: 
+    gestureType: 1
+    action:
+      id: 0
+      description: 
+      axisConstraint: 0

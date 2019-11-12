@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************************************************************
+Microsoft.NetCore.UniversalWindowsPlatform.targets
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="FilterCoreFrameworkPayloadFromNuGet" 
+          BeforeTargets="RuntimeImplementationProjectOutputGroup" 
+          AfterTargets="ResolveReferences" 
+          DependsOnTargets="ResolveNuGetPackageAssets" 
+          Condition="'$(ResolveNuGetPackages)' == 'true' 
+                      AND '$(_TargetsCoreRuntime)' == 'true' 
+                      AND '$(TargetPlatformMinVersion)' &gt;= '10.0.16299.0'
+                      AND '$(UseAppLocalCoreFramework)' != 'true'">
+    <PropertyGroup>
+      <_CoreFrameworkPackageId Condition="'%(ReferenceCopyLocalPaths.FileName)%(ReferenceCopyLocalPaths.Extension)' == 'System.Runtime.dll'">%(ReferenceCopyLocalPaths.NuGetPackageId)</_CoreFrameworkPackageId>
+    </PropertyGroup>
+    <ItemGroup>
+      <!-- We leave System.Runtime.dll alone for now because of a check in Microsoft.NuGet.targets -->
+      <ReferenceCopyLocalPaths 
+       Remove="@(ReferenceCopyLocalPaths)" 
+       Condition="'$(_CoreFrameworkPackageId)' != ''
+                 AND !$([System.String]::new('%(ReferenceCopyLocalPaths.Identity)').EndsWith('System.Runtime.dll'))
+                 AND '%(ReferenceCopyLocalPaths.NuGetPackageId)' == '$(_CoreFrameworkPackageId)'"/>
+    </ItemGroup>
+  </Target>
+</Project>
